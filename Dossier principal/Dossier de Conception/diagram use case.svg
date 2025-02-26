@@ -1,0 +1,287 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1010pt" height="1356pt" viewBox="0.00 0.00 1010.46 1355.60">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 1351.6)">
+<title>greenlife_manager</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-1351.6 1006.46,-1351.6 1006.46,4 -4,4"></polygon>
+<!-- user -->
+<g id="node1" class="node">
+<title>user</title>
+<polygon fill="none" stroke="black" points="533.61,-746.7 533.61,-938.7 713.04,-938.7 713.04,-746.7 533.61,-746.7"></polygon>
+<text text-anchor="middle" x="623.32" y="-922.1" font-family="Times,serif" font-size="14.00">User</text>
+<polyline fill="none" stroke="black" points="533.61,-913.9 713.04,-913.9"></polyline>
+<text text-anchor="start" x="541.61" y="-897.3" font-family="Times,serif" font-size="14.00">+ id: Int</text>
+<text text-anchor="start" x="541.61" y="-880.5" font-family="Times,serif" font-size="14.00">+ name: String</text>
+<text text-anchor="start" x="541.61" y="-863.7" font-family="Times,serif" font-size="14.00">+ email: String</text>
+<text text-anchor="start" x="541.61" y="-846.9" font-family="Times,serif" font-size="14.00">+ password: String</text>
+<text text-anchor="start" x="541.61" y="-830.1" font-family="Times,serif" font-size="14.00">+ role: Enum[Admin, Client]</text>
+<text text-anchor="start" x="541.61" y="-813.3" font-family="Times,serif" font-size="14.00">+ created_at: DateTime</text>
+<polyline fill="none" stroke="black" points="533.61,-805.1 713.04,-805.1"></polyline>
+<text text-anchor="start" x="541.61" y="-788.5" font-family="Times,serif" font-size="14.00">+ createGarden(): void</text>
+<text text-anchor="start" x="541.61" y="-771.7" font-family="Times,serif" font-size="14.00">+ placeOrder(): void</text>
+<text text-anchor="start" x="541.61" y="-754.9" font-family="Times,serif" font-size="14.00">+ createPost(): void</text>
+</g>
+<!-- plant -->
+<g id="node4" class="node">
+<title>garden</title>
+<polygon fill="none" stroke="black" points="174.19,-517.7 174.19,-676.1 322.46,-676.1 322.46,-517.7 174.19,-517.7"></polygon>
+<text text-anchor="middle" x="248.32" y="-659.5" font-family="Times,serif" font-size="14.00">Garden</text>
+<polyline fill="none" stroke="black" points="174.19,-651.3 322.46,-651.3"></polyline>
+<text text-anchor="start" x="182.19" y="-634.7" font-family="Times,serif" font-size="14.00">+ id: Int</text>
+<text text-anchor="start" x="182.19" y="-617.9" font-family="Times,serif" font-size="14.00">+ user_id: Int</text>
+<text text-anchor="start" x="182.19" y="-601.1" font-family="Times,serif" font-size="14.00">+ name: String</text>
+<text text-anchor="start" x="182.19" y="-584.3" font-family="Times,serif" font-size="14.00">+ location: String</text>
+<text text-anchor="start" x="182.19" y="-567.5" font-family="Times,serif" font-size="14.00">+ created_at: DateTime</text>
+<polyline fill="none" stroke="black" points="174.19,-559.3 322.46,-559.3"></polyline>
+<text text-anchor="start" x="182.19" y="-542.7" font-family="Times,serif" font-size="14.00">+ addPlant(): void</text>
+<text text-anchor="start" x="182.19" y="-525.9" font-family="Times,serif" font-size="14.00">+ removePlant(): void</text>
+</g>
+<!-- category -->
+<g id="edge1" class="edge">
+<title>user-&gt;garden</title>
+<path fill="none" stroke="black" d="M533.3,-798.09C476.17,-768.76 401.54,-727.34 331.64,-676.55"></path>
+<polygon fill="black" stroke="black" points="334.05,-673.97 323.92,-670.87 329.9,-679.61 334.05,-673.97"></polygon>
+<text text-anchor="middle" x="418.61" y="-715.6" font-family="Times,serif" font-size="14.00">Has</text>
+<text text-anchor="middle" x="418.61" y="-698.8" font-family="Times,serif" font-size="14.00">1..*</text>
+</g>
+<!-- garden -->
+<g id="node8" class="node">
+<title>order</title>
+<polygon fill="none" stroke="black" points="340.58,-538.5 340.58,-655.3 670.07,-655.3 670.07,-538.5 340.58,-538.5"></polygon>
+<text text-anchor="middle" x="505.32" y="-638.7" font-family="Times,serif" font-size="14.00">Order</text>
+<polyline fill="none" stroke="black" points="340.58,-630.5 670.07,-630.5"></polyline>
+<text text-anchor="start" x="348.58" y="-613.9" font-family="Times,serif" font-size="14.00">+ id: Int</text>
+<text text-anchor="start" x="348.58" y="-597.1" font-family="Times,serif" font-size="14.00">+ user_id: Int</text>
+<text text-anchor="start" x="348.58" y="-580.3" font-family="Times,serif" font-size="14.00">+ total_price: Float</text>
+<text text-anchor="start" x="348.58" y="-563.5" font-family="Times,serif" font-size="14.00">+ status: Enum[Pending, Shipped, Delivered, Canceled]</text>
+<text text-anchor="start" x="348.58" y="-546.7" font-family="Times,serif" font-size="14.00">+ created_at: DateTime</text>
+</g>
+<!-- plant_care_schedule -->
+<g id="edge6" class="edge">
+<title>user-&gt;order</title>
+<path fill="none" stroke="black" d="M577.19,-746.39C564.13,-719.4 550.18,-690.57 538.07,-665.57"></path>
+<polygon fill="black" stroke="black" points="541.35,-664.3 533.84,-656.83 535.05,-667.35 541.35,-664.3"></polygon>
+<text text-anchor="middle" x="585.74" y="-715.6" font-family="Times,serif" font-size="14.00">Places</text>
+<text text-anchor="middle" x="585.74" y="-698.8" font-family="Times,serif" font-size="14.00">1..*</text>
+</g>
+<!-- weather_alert -->
+<g id="node10" class="node">
+<title>post</title>
+<polygon fill="none" stroke="black" points="688.19,-530.1 688.19,-663.7 836.46,-663.7 836.46,-530.1 688.19,-530.1"></polygon>
+<text text-anchor="middle" x="762.32" y="-647.1" font-family="Times,serif" font-size="14.00">Post</text>
+<polyline fill="none" stroke="black" points="688.19,-638.9 836.46,-638.9"></polyline>
+<text text-anchor="start" x="696.19" y="-622.3" font-family="Times,serif" font-size="14.00">+ id: Int</text>
+<text text-anchor="start" x="696.19" y="-605.5" font-family="Times,serif" font-size="14.00">+ user_id: Int</text>
+<text text-anchor="start" x="696.19" y="-588.7" font-family="Times,serif" font-size="14.00">+ title: String</text>
+<text text-anchor="start" x="696.19" y="-571.9" font-family="Times,serif" font-size="14.00">+ content: Text</text>
+<text text-anchor="start" x="696.19" y="-555.1" font-family="Times,serif" font-size="14.00">+ image: String</text>
+<text text-anchor="start" x="696.19" y="-538.3" font-family="Times,serif" font-size="14.00">+ created_at: DateTime</text>
+</g>
+<!-- product -->
+<g id="edge8" class="edge">
+<title>user-&gt;post</title>
+<path fill="none" stroke="black" d="M677.66,-746.39C691.33,-722.43 705.81,-697.02 718.86,-674.13"></path>
+<polygon fill="black" stroke="black" points="721.9,-675.88 723.81,-665.46 715.81,-672.41 721.9,-675.88"></polygon>
+<text text-anchor="middle" x="726.26" y="-715.6" font-family="Times,serif" font-size="14.00">Creates</text>
+<text text-anchor="middle" x="726.26" y="-698.8" font-family="Times,serif" font-size="14.00">1..*</text>
+</g>
+<!-- order -->
+<g id="node12" class="node">
+<title>chat_message</title>
+<polygon fill="none" stroke="black" points="854.19,-538.5 854.19,-655.3 1002.46,-655.3 1002.46,-538.5 854.19,-538.5"></polygon>
+<text text-anchor="middle" x="928.32" y="-638.7" font-family="Times,serif" font-size="14.00">ChatMessage</text>
+<polyline fill="none" stroke="black" points="854.19,-630.5 1002.46,-630.5"></polyline>
+<text text-anchor="start" x="862.19" y="-613.9" font-family="Times,serif" font-size="14.00">+ id: Int</text>
+<text text-anchor="start" x="862.19" y="-597.1" font-family="Times,serif" font-size="14.00">+ sender_id: Int</text>
+<text text-anchor="start" x="862.19" y="-580.3" font-family="Times,serif" font-size="14.00">+ receiver_id: Int</text>
+<text text-anchor="start" x="862.19" y="-563.5" font-family="Times,serif" font-size="14.00">+ message: Text</text>
+<text text-anchor="start" x="862.19" y="-546.7" font-family="Times,serif" font-size="14.00">+ created_at: DateTime</text>
+</g>
+<!-- order_item -->
+<g id="edge10" class="edge">
+<title>user-&gt;chat_message</title>
+<path fill="none" stroke="black" d="M713.51,-778.38C754.59,-748.59 803.32,-711.92 845.32,-676.6 850.51,-672.24 855.79,-667.64 861.04,-662.95"></path>
+<polygon fill="black" stroke="black" points="863.07,-665.84 868.14,-656.53 858.37,-660.64 863.07,-665.84"></polygon>
+<text text-anchor="middle" x="838.89" y="-715.6" font-family="Times,serif" font-size="14.00">Sends</text>
+<text text-anchor="middle" x="838.89" y="-698.8" font-family="Times,serif" font-size="14.00">1..*</text>
+</g>
+<!-- post -->
+<g id="node2" class="node">
+<title>plant</title>
+<polygon fill="none" stroke="black" points="72.29,-221.5 72.29,-447.1 228.36,-447.1 228.36,-221.5 72.29,-221.5"></polygon>
+<text text-anchor="middle" x="150.32" y="-430.5" font-family="Times,serif" font-size="14.00">Plant</text>
+<polyline fill="none" stroke="black" points="72.29,-422.3 228.36,-422.3"></polyline>
+<text text-anchor="start" x="80.29" y="-405.7" font-family="Times,serif" font-size="14.00">+ id: Int</text>
+<text text-anchor="start" x="80.29" y="-388.9" font-family="Times,serif" font-size="14.00">+ name: String</text>
+<text text-anchor="start" x="80.29" y="-372.1" font-family="Times,serif" font-size="14.00">+ category_id: Int</text>
+<text text-anchor="start" x="80.29" y="-355.3" font-family="Times,serif" font-size="14.00">+ climate: String</text>
+<text text-anchor="start" x="80.29" y="-338.5" font-family="Times,serif" font-size="14.00">+ water_needs: String</text>
+<text text-anchor="start" x="80.29" y="-321.7" font-family="Times,serif" font-size="14.00">+ growth_stage: String</text>
+<text text-anchor="start" x="80.29" y="-304.9" font-family="Times,serif" font-size="14.00">+ care_instructions: Text</text>
+<text text-anchor="start" x="80.29" y="-288.1" font-family="Times,serif" font-size="14.00">+ image: String</text>
+<text text-anchor="start" x="80.29" y="-271.3" font-family="Times,serif" font-size="14.00">+ created_at: DateTime</text>
+<polyline fill="none" stroke="black" points="72.29,-263.1 228.36,-263.1"></polyline>
+<text text-anchor="start" x="80.29" y="-246.5" font-family="Times,serif" font-size="14.00">+ water(): void</text>
+<text text-anchor="start" x="80.29" y="-229.7" font-family="Times,serif" font-size="14.00">+ fertilize(): void</text>
+</g>
+<!-- comment -->
+<g id="node3" class="node">
+<title>category</title>
+<polygon fill="none" stroke="black" points="0,-34.1 0,-117.3 122.65,-117.3 122.65,-34.1 0,-34.1"></polygon>
+<text text-anchor="middle" x="61.32" y="-100.7" font-family="Times,serif" font-size="14.00">Category</text>
+<polyline fill="none" stroke="black" points="0,-92.5 122.65,-92.5"></polyline>
+<text text-anchor="start" x="8" y="-75.9" font-family="Times,serif" font-size="14.00">+ id: Int</text>
+<text text-anchor="start" x="8" y="-59.1" font-family="Times,serif" font-size="14.00">+ name: String</text>
+<text text-anchor="start" x="8" y="-42.3" font-family="Times,serif" font-size="14.00">+ description: Text</text>
+</g>
+<!-- chat_message -->
+<g id="edge3" class="edge">
+<title>plant-&gt;category</title>
+<path fill="none" stroke="black" d="M111.42,-221.12C100.19,-188.77 88.49,-155.02 79.22,-128.29"></path>
+<polygon fill="black" stroke="black" points="82.61,-127.39 76.03,-119.09 76,-129.69 82.61,-127.39"></polygon>
+<text text-anchor="middle" x="133.29" y="-190.4" font-family="Times,serif" font-size="14.00">Belongs to</text>
+<text text-anchor="middle" x="133.29" y="-173.6" font-family="Times,serif" font-size="14.00">N..1</text>
+</g>
+<!-- activity_log -->
+<g id="node5" class="node">
+<title>plant_care_schedule</title>
+<polygon fill="none" stroke="black" points="140.68,-0.5 140.68,-150.9 337.96,-150.9 337.96,-0.5 140.68,-0.5"></polygon>
+<text text-anchor="middle" x="239.32" y="-134.3" font-family="Times,serif" font-size="14.00">PlantCareSchedule</text>
+<polyline fill="none" stroke="black" points="140.68,-126.1 337.96,-126.1"></polyline>
+<text text-anchor="start" x="148.68" y="-109.5" font-family="Times,serif" font-size="14.00">+ id: Int</text>
+<text text-anchor="start" x="148.68" y="-92.7" font-family="Times,serif" font-size="14.00">+ plant_id: Int</text>
+<text text-anchor="start" x="148.68" y="-75.9" font-family="Times,serif" font-size="14.00">+ watering_frequency: String</text>
+<text text-anchor="start" x="148.68" y="-59.1" font-family="Times,serif" font-size="14.00">+ fertilization_frequency: String</text>
+<text text-anchor="start" x="148.68" y="-42.3" font-family="Times,serif" font-size="14.00">+ pruning_schedule: String</text>
+<text text-anchor="start" x="148.68" y="-25.5" font-family="Times,serif" font-size="14.00">+ last_watered: DateTime</text>
+<text text-anchor="start" x="148.68" y="-8.7" font-family="Times,serif" font-size="14.00">+ last_fertilized: DateTime</text>
+</g>
+<!-- analytics -->
+<g id="edge4" class="edge">
+<title>plant-&gt;plant_care_schedule</title>
+<path fill="none" stroke="black" d="M189.23,-221.12C196.11,-201.3 203.16,-180.96 209.73,-162.03"></path>
+<polygon fill="black" stroke="black" points="212.96,-163.39 212.93,-152.8 206.35,-161.1 212.96,-163.39"></polygon>
+<text text-anchor="middle" x="216.3" y="-190.4" font-family="Times,serif" font-size="14.00">Has</text>
+<text text-anchor="middle" x="216.3" y="-173.6" font-family="Times,serif" font-size="14.00">1..1</text>
+</g>
+<!-- analytics -->
+<g id="edge2" class="edge">
+<title>garden-&gt;plant</title>
+<path fill="none" stroke="black" d="M218.79,-517.36C211.73,-498.6 204.04,-478.13 196.43,-457.91"></path>
+<polygon fill="black" stroke="black" points="199.8,-456.91 193,-448.78 193.24,-459.37 199.8,-456.91"></polygon>
+<text text-anchor="middle" x="235.87" y="-486.6" font-family="Times,serif" font-size="14.00">Contains</text>
+<text text-anchor="middle" x="235.87" y="-469.8" font-family="Times,serif" font-size="14.00">1..*</text>
+</g>
+<!-- analytics -->
+<g id="node6" class="node">
+<title>weather_alert</title>
+<polygon fill="none" stroke="black" points="246.83,-275.9 246.83,-392.7 371.82,-392.7 371.82,-275.9 246.83,-275.9"></polygon>
+<text text-anchor="middle" x="309.32" y="-376.1" font-family="Times,serif" font-size="14.00">WeatherAlert</text>
+<polyline fill="none" stroke="black" points="246.83,-367.9 371.82,-367.9"></polyline>
+<text text-anchor="start" x="254.83" y="-351.3" font-family="Times,serif" font-size="14.00">+ id: Int</text>
+<text text-anchor="start" x="254.83" y="-334.5" font-family="Times,serif" font-size="14.00">+ garden_id: Int</text>
+<text text-anchor="start" x="254.83" y="-317.7" font-family="Times,serif" font-size="14.00">+ alert_type: String</text>
+<text text-anchor="start" x="254.83" y="-300.9" font-family="Times,serif" font-size="14.00">+ description: Text</text>
+<text text-anchor="start" x="254.83" y="-284.1" font-family="Times,serif" font-size="14.00">+ date: DateTime</text>
+</g>
+<!-- analytics -->
+<g id="edge5" class="edge">
+<title>garden-&gt;weather_alert</title>
+<path fill="none" stroke="black" d="M266.71,-517.36C275.16,-481.25 285.09,-438.81 293.24,-404"></path>
+<polygon fill="black" stroke="black" points="296.61,-404.99 295.48,-394.45 289.79,-403.39 296.61,-404.99"></polygon>
+<text text-anchor="middle" x="289.71" y="-486.6" font-family="Times,serif" font-size="14.00">Has</text>
+<text text-anchor="middle" x="289.71" y="-469.8" font-family="Times,serif" font-size="14.00">1..*</text>
+</g>
+<!-- analytics -->
+<g id="node7" class="node">
+<title>product</title>
+<polygon fill="none" stroke="black" points="715.19,-1179.9 715.19,-1347.1 863.46,-1347.1 863.46,-1179.9 715.19,-1179.9"></polygon>
+<text text-anchor="middle" x="789.32" y="-1330.5" font-family="Times,serif" font-size="14.00">Product</text>
+<polyline fill="none" stroke="black" points="715.19,-1322.3 863.46,-1322.3"></polyline>
+<text text-anchor="start" x="723.19" y="-1305.7" font-family="Times,serif" font-size="14.00">+ id: Int</text>
+<text text-anchor="start" x="723.19" y="-1288.9" font-family="Times,serif" font-size="14.00">+ name: String</text>
+<text text-anchor="start" x="723.19" y="-1272.1" font-family="Times,serif" font-size="14.00">+ category_id: Int</text>
+<text text-anchor="start" x="723.19" y="-1255.3" font-family="Times,serif" font-size="14.00">+ price: Float</text>
+<text text-anchor="start" x="723.19" y="-1238.5" font-family="Times,serif" font-size="14.00">+ stock: Int</text>
+<text text-anchor="start" x="723.19" y="-1221.7" font-family="Times,serif" font-size="14.00">+ description: Text</text>
+<text text-anchor="start" x="723.19" y="-1204.9" font-family="Times,serif" font-size="14.00">+ image: String</text>
+<text text-anchor="start" x="723.19" y="-1188.1" font-family="Times,serif" font-size="14.00">+ created_at: DateTime</text>
+</g>
+<!-- analytics -->
+<g id="node9" class="node">
+<title>order_item</title>
+<polygon fill="none" stroke="black" points="449.83,-275.9 449.83,-392.7 560.82,-392.7 560.82,-275.9 449.83,-275.9"></polygon>
+<text text-anchor="middle" x="505.32" y="-376.1" font-family="Times,serif" font-size="14.00">OrderItem</text>
+<polyline fill="none" stroke="black" points="449.83,-367.9 560.82,-367.9"></polyline>
+<text text-anchor="start" x="457.83" y="-351.3" font-family="Times,serif" font-size="14.00">+ id: Int</text>
+<text text-anchor="start" x="457.83" y="-334.5" font-family="Times,serif" font-size="14.00">+ order_id: Int</text>
+<text text-anchor="start" x="457.83" y="-317.7" font-family="Times,serif" font-size="14.00">+ product_id: Int</text>
+<text text-anchor="start" x="457.83" y="-300.9" font-family="Times,serif" font-size="14.00">+ quantity: Int</text>
+<text text-anchor="start" x="457.83" y="-284.1" font-family="Times,serif" font-size="14.00">+ price: Float</text>
+</g>
+<!-- analytics -->
+<g id="edge7" class="edge">
+<title>order-&gt;order_item</title>
+<path fill="none" stroke="black" d="M505.32,-538.06C505.32,-498.59 505.32,-446.1 505.32,-404.42"></path>
+<polygon fill="black" stroke="black" points="508.82,-404.49 505.32,-394.49 501.82,-404.49 508.82,-404.49"></polygon>
+<text text-anchor="middle" x="530.21" y="-486.6" font-family="Times,serif" font-size="14.00">Contains</text>
+<text text-anchor="middle" x="530.21" y="-469.8" font-family="Times,serif" font-size="14.00">1..*</text>
+</g>
+<!-- analytics -->
+<g id="node11" class="node">
+<title>comment</title>
+<polygon fill="none" stroke="black" points="688.19,-275.9 688.19,-392.7 836.46,-392.7 836.46,-275.9 688.19,-275.9"></polygon>
+<text text-anchor="middle" x="762.32" y="-376.1" font-family="Times,serif" font-size="14.00">Comment</text>
+<polyline fill="none" stroke="black" points="688.19,-367.9 836.46,-367.9"></polyline>
+<text text-anchor="start" x="696.19" y="-351.3" font-family="Times,serif" font-size="14.00">+ id: Int</text>
+<text text-anchor="start" x="696.19" y="-334.5" font-family="Times,serif" font-size="14.00">+ post_id: Int</text>
+<text text-anchor="start" x="696.19" y="-317.7" font-family="Times,serif" font-size="14.00">+ user_id: Int</text>
+<text text-anchor="start" x="696.19" y="-300.9" font-family="Times,serif" font-size="14.00">+ content: Text</text>
+<text text-anchor="start" x="696.19" y="-284.1" font-family="Times,serif" font-size="14.00">+ created_at: DateTime</text>
+</g>
+<!-- activity_log -->
+<g id="edge9" class="edge">
+<title>post-&gt;comment</title>
+<path fill="none" stroke="black" d="M762.32,-529.8C762.32,-491.46 762.32,-443.22 762.32,-404.38"></path>
+<polygon fill="black" stroke="black" points="765.82,-404.42 762.32,-394.42 758.82,-404.42 765.82,-404.42"></polygon>
+<text text-anchor="middle" x="773.21" y="-486.6" font-family="Times,serif" font-size="14.00">Has</text>
+<text text-anchor="middle" x="773.21" y="-469.8" font-family="Times,serif" font-size="14.00">1..*</text>
+</g>
+<!-- analytics -->
+<g id="node13" class="node">
+<title>activity_log</title>
+<polygon fill="none" stroke="black" points="548.78,-1009.3 548.78,-1109.3 697.86,-1109.3 697.86,-1009.3 548.78,-1009.3"></polygon>
+<text text-anchor="middle" x="623.32" y="-1092.7" font-family="Times,serif" font-size="14.00">ActivityLog</text>
+<polyline fill="none" stroke="black" points="548.78,-1084.5 697.86,-1084.5"></polyline>
+<text text-anchor="start" x="556.78" y="-1067.9" font-family="Times,serif" font-size="14.00">+ id: Int</text>
+<text text-anchor="start" x="556.78" y="-1051.1" font-family="Times,serif" font-size="14.00">+ user_id: Int</text>
+<text text-anchor="start" x="556.78" y="-1034.3" font-family="Times,serif" font-size="14.00">+ action: String</text>
+<text text-anchor="start" x="556.78" y="-1017.5" font-family="Times,serif" font-size="14.00">+ timestamp: DateTime</text>
+</g>
+<!-- analytics -->
+<g id="edge11" class="edge">
+<title>activity_log-&gt;user</title>
+<path fill="none" stroke="black" d="M623.32,-1009.07C623.32,-991.53 623.32,-971.02 623.32,-950.54"></path>
+<polygon fill="black" stroke="black" points="626.82,-950.7 623.32,-940.7 619.82,-950.7 626.82,-950.7"></polygon>
+<text text-anchor="middle" x="642.37" y="-978.2" font-family="Times,serif" font-size="14.00">Tracks</text>
+<text text-anchor="middle" x="642.37" y="-961.4" font-family="Times,serif" font-size="14.00">1..*</text>
+</g>
+<!-- analytics -->
+<g id="node14" class="node">
+<title>analytics</title>
+<polygon fill="none" stroke="black" points="549.19,-1213.5 549.19,-1313.5 697.46,-1313.5 697.46,-1213.5 549.19,-1213.5"></polygon>
+<text text-anchor="middle" x="623.32" y="-1296.9" font-family="Times,serif" font-size="14.00">Analytics</text>
+<polyline fill="none" stroke="black" points="549.19,-1288.7 697.46,-1288.7"></polyline>
+<text text-anchor="start" x="557.19" y="-1272.1" font-family="Times,serif" font-size="14.00">+ id: Int</text>
+<text text-anchor="start" x="557.19" y="-1255.3" font-family="Times,serif" font-size="14.00">+ type: String</text>
+<text text-anchor="start" x="557.19" y="-1238.5" font-family="Times,serif" font-size="14.00">+ data: JSON</text>
+<text text-anchor="start" x="557.19" y="-1221.7" font-family="Times,serif" font-size="14.00">+ created_at: DateTime</text>
+</g>
+<!-- analytics&#45;&gt;activity_log -->
+<g id="edge12" class="edge">
+<title>analytics-&gt;activity_log</title>
+<path fill="none" stroke="black" d="M623.32,-1213.04C623.32,-1185.27 623.32,-1150.4 623.32,-1121"></path>
+<polygon fill="black" stroke="black" points="626.82,-1121.12 623.32,-1111.12 619.82,-1121.12 626.82,-1121.12"></polygon>
+<text text-anchor="middle" x="649.37" y="-1148.8" font-family="Times,serif" font-size="14.00">Analyzes</text>
+<text text-anchor="middle" x="649.37" y="-1132" font-family="Times,serif" font-size="14.00">1..*</text>
+</g>
+</g>
+</svg>
